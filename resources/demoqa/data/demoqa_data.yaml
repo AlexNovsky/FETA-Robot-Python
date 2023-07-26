@@ -5,9 +5,15 @@ base_url: https://demoqa.com
 test_user:
   first_name: Alex
   last_name: Novsky
-  email: pythonminutes@gmail.com
-  password: PythonMinutes
-  sex: Male
+  email: Alex{placeholder}@gmail.com
+  password: password{placeholder}##
+  gender: Male
+  hobbies: Reading, Music
   phone: 1234567890
   DOB: 03.04.2005
-  company: GL
+
+address:
+  house: 1234
+  street: google str.
+  state: TX
+  zip: 12345
