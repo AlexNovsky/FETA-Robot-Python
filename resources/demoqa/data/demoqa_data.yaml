@@ -8,7 +8,7 @@ test_user:
   email: Alex{placeholder}@gmail.com
   password: password{placeholder}##
   gender: Male
-  hobbies: Reading, Music
+  hobbies: Movies, Music
   phone: 1234567890
   DOB: 03.04.2005
 

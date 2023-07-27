@@ -21,6 +21,7 @@ Fill Practice form with generated credentials
     practice_form.generate_user_email
     practice_form.generate_phone_number
     practice_form.select_gender_radio
+    practice_form.select_hobby_checkbox
     Sleep  3
 
 #Fill Practice form with defined credentials

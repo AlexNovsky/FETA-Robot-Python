@@ -59,10 +59,40 @@ def get_gender_locator():
     else:
         return str("//label[contains(text(),'Other')]")
 
-def get_hobbies():
+def check_sports_hobby():
     config_folder = os.path.join(os.path.dirname(__file__), '..', '..', 'demoqa', 'data')
     config_file_path = os.path.join(config_folder, 'demoqa_data.yaml')
     with open(config_file_path, 'r') as file:
         data = yaml.safe_load(file)
     hobbies = str(data['test_user']['hobbies'])
-    # TODO defining checkbox locators based on val. hobbies
+    hobbies_list = [h.strip() for h in hobbies.split(',')]
+    print(hobbies)
+    print(hobbies_list)
+    for word in hobbies_list:
+        if word.lower() == 'sports':
+            return str("//label[contains(text(),'Sports')]")
+    return None
+
+def check_reading_hobby():
+    config_folder = os.path.join(os.path.dirname(__file__), '..', '..', 'demoqa', 'data')
+    config_file_path = os.path.join(config_folder, 'demoqa_data.yaml')
+    with open(config_file_path, 'r') as file:
+        data = yaml.safe_load(file)
+    hobbies = str(data['test_user']['hobbies'])
+    hobbies_list = [h.strip() for h in hobbies.split(',')]
+    for word in hobbies_list:
+        if word.lower() == 'reading':
+            return str("//label[contains(text(),'Reading')]")
+    return None
+
+def check_music_hobby():
+    config_folder = os.path.join(os.path.dirname(__file__), '..', '..', 'demoqa', 'data')
+    config_file_path = os.path.join(config_folder, 'demoqa_data.yaml')
+    with open(config_file_path, 'r') as file:
+        data = yaml.safe_load(file)
+    hobbies = str(data['test_user']['hobbies'])
+    hobbies_list = [h.strip() for h in hobbies.split(',')]
+    for word in hobbies_list:
+        if word.lower() == 'music':
+            return str("//label[contains(text(),'Music')]")
+    return None

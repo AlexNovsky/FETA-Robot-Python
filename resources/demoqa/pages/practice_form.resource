@@ -11,9 +11,6 @@ ${elements_pannel}              //div[@class='left-pannel']
 ${input_first_name_textbox}     //input[@id='firstName']
 ${input_last_name_textbox}      //input[@id='lastName']
 ${input_email_textbox}          //input[@id='userEmail']
-${male_radio}                   //input[@id='gender-radio-1']
-${female_radio}                 //input[@id='gender-radio-2']
-${other_radio}                  //input[@id='gender-radio-3']
 ${phone_number_textbox}         //input[@id='userNumber']
 ${birth_date}                   //input[@id='dateOfBirthInput']
 
@@ -29,32 +26,17 @@ generate_first_name
     ${generated_name}=          generate_username  ${test_user.first_name}
     Input Text                  ${input_first_name_textbox}  ${generated_name}
 
-#enter_first_name
-#    Click Element         ${input_first_name_textbox}
-#    Clear Element Text    ${input_first_name_textbox}
-#    Input Text            ${input_first_name_textbox}  ${test_user.first_name}
-
 generate_last_name
     Click Element               ${input_last_name_textbox}
     Clear Element Text          ${input_last_name_textbox}
     ${generated_name}=          generate_username               ${test_user.last_name}
     Input Text                  ${input_last_name_textbox}      ${generated_name}
 
-#enter_last_name
-#    Click Element         ${input_last_name_textbox}
-#    Clear Element Text    ${input_last_name_textbox}
-#    Input Text            ${input_last_name_textbox}  ${test_user.last_name}
-
 generate_user_email
     Click Element               ${input_email_textbox}
     Clear Element Text          ${input_email_textbox}
     ${generated_email}=         generate_email
     Input Text                  ${input_email_textbox}          ${generated_email}
-
-#enter_email
-#    Click Element               ${input_email_textbox}
-#    Clear Element Text          ${input_email_textbox}
-#    Input Text                  ${input_email_textbox}          ${test_user.email}
 
 select_gender_radio
     ${user_gender}=                         get_gender_locator
@@ -66,18 +48,11 @@ generate_phone_number
     ${generated_phone}=         generate_phone
     Input Text                  ${phone_number_textbox}  ${generated_phone}
 
-#enter_phone
-#    Click Element    ${phone_number}
-#    Clear Element Text    ${phone_number}
-#    Input Text    ${phone_number}  ${test_user.phone}
+select_hobby_checkbox
+    ${user_hobbie}=             check_sports_hobby
+    Run Keyword If              "${user_hobbie}" != "None"  Click Element       ${user_hobbie}
+    ${user_hobbie}=             check_reading_hobby
+    Run Keyword If              "${user_hobbie}" != "None"    Click Element     ${user_hobbie}
+    ${user_hobbie}=             check_music_hobby
+    Run Keyword If              "${user_hobbie}" != "None"    Click Element     ${user_hobbie}
 
-#enter_dob
-#    Click Element   ${birth_date}
-##    Clear Element Text          ${birth_date}
-#    Press Keys                  ${birth_date}  CTRL+a
-#    Press Keys   ${birth_date}  DELETE
-##    Press Keys                  ${birth_date}  BACKSPASE
-#    Input Text                  ${birth_date}     ${test_user.DOB}
-#    Sleep    3
-#    Press Keys                  ${birth_date}     RETURN
-#    Sleep  3
