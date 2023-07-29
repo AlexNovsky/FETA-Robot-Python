@@ -8,12 +8,12 @@ Suite Setup  Begin Web Test
 Suite Teardown  End Web Test
 
 *** Variables ***
-${uri}     ${base_url}/automation-practice-form
+${uri}     ${base_url}/automation-practice-form     #Configurable URI for Practice form with base_url var from yaml
 
 *** Test Cases ***
 Verify Practice form loaded
     Go To                                   ${uri}
-#    practice_form.verify_happy_elements
+    practice_form.verify_happy_elements
 
 Fill Practice form with generated credentials
     practice_form.generate_first_name
@@ -22,11 +22,8 @@ Fill Practice form with generated credentials
     practice_form.generate_phone_number
     practice_form.select_gender_radio
     practice_form.select_hobby_checkbox
-    Sleep  3
-
-#Fill Practice form with defined credentials
-#    practice_form.enter_first_name
-#    practice_form.enter_last_name
-#    practice_form.enter_email
-#    practice_form.enter_phone
-#    Sleep  3
+    practice_form.enter_address
+#    practice_form.select_state
+#    practice_form.select_city
+#    practice_form.submit_form
+    Sleep  5
