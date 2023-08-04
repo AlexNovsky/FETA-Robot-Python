@@ -31,6 +31,5 @@ loginToApp
     Input Text                          //input[@id='Password']     ${pwd}
     Element Should Be Visible           //*[@id='RememberMe']
     Click Element                       //*[@id='RememberMe']
-    Сlick Element                       //*[@id='RememberMe']
     Click Button                        //button[@class='button-1 login-button']
 

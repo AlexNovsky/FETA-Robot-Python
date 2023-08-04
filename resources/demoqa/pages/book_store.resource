@@ -55,9 +55,6 @@ create_new_user
     Enter_initial_generated_credentials
     Click Button                    ${btn_new_user}
     Wait Until Element Is Visible   ${form_registration}
-#    Select Frame                    ${frame_new_user_captcha}
-#    Element Should Be Visible       ${new_user_captcha}
-#    Unselect Frame                  ${frame_new_user_captcha}
     Clear Element Text              ${textbox_first_name}
     Input Text                      ${textbox_first_name}           ${test_user.first_name}
     Clear Element Text              ${textbox_last_name}
@@ -66,4 +63,11 @@ create_new_user
     Input Text                      ${textbox_username}             ${global_username}
     Clear Element Text              ${textbox_password}
     Input Text                      ${textbox_password}             ${global_password}
-    Sleep    10
+    
+#    Sleep    3
+#    Select Frame                    //iframe[@title='reCAPTCHA']
+#    Mouse Over                      //*[@class='recaptcha-checkbox-border']
+#    Click Element                   //*[@class='recaptcha-checkbox-border']
+#    Sleep    5
+#    Unselect Frame
+#    sleep   4

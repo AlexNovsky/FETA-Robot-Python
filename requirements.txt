@@ -1,5 +1,5 @@
-pyyaml==6.0.1
+pyyaml>=6.0.1
 selenium==4.9.1
-robotframework==6.01
-robotframework-seleniumlibrary=6.1.0
-robotframework-pageobjectlibrary=1.1
+robotframework>=6.01
+robotframework-seleniumlibrary>=6.1.0
+robotframework-pageobjectlibrary>=1.1
